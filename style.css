@@ -125,6 +125,9 @@ button { cursor:pointer; font-family:inherit; background:none; border:none; }
   display: inline-flex;
   gap: 6px;
   align-items: baseline;
+  white-space: nowrap;         /* never wrap mid-logo */
+  flex-shrink: 1;              /* allow shrinking in flex row */
+  min-width: 0;                /* allow shrink below natural width */
 }
 .wm-pure    { color: var(--red); }
 .wm-fitness { color: var(--white); }
@@ -291,6 +294,8 @@ button { cursor:pointer; font-family:inherit; background:none; border:none; }
   top: 0; left: 0; right: 0;
   z-index: 500;
   transition: background 0.3s ease, box-shadow 0.3s ease;
+  max-width: 100vw;            /* never wider than screen */
+  overflow: hidden;            /* clip any child overflow */
 }
 #nav.scrolled {
   background: rgba(10,10,10,0.95);
@@ -304,6 +309,7 @@ button { cursor:pointer; font-family:inherit; background:none; border:none; }
   display: flex;
   align-items: center;
   gap: 40px;
+  width: 100%;                 /* fill available, never overflow */
 }
 .nav-links {
   display: flex;
@@ -1279,8 +1285,18 @@ button { cursor:pointer; font-family:inherit; background:none; border:none; }
 @media (max-width: 768px) {
   :root { --sp: 56px; --cp: 18px; }
 
+  /* Nav: shrink wordmark, lock burger to right edge */
+  .nav-inner {
+    padding: 16px var(--cp);
+    gap: 0;                        /* remove gap; burger uses margin-left:auto */
+  }
   .nav-links, .nav-pill { display: none; }
-  .burger { display: flex; }
+  .burger {
+    display: flex;
+    margin-left: auto;             /* push to far right */
+    flex-shrink: 0;                /* never collapse */
+  }
+  .wordmark { font-size: 1.25rem; letter-spacing: 0.05em; }
 
   .hero-title { font-size: clamp(3.8rem, 16vw, 7rem); }
   .hero-copy  { max-width: 100%; }
