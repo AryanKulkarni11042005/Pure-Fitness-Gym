@@ -235,49 +235,103 @@ function initScrollAnims() {
 
 /* ════════════════════════════════════════════════
    8. TESTIMONIALS SLIDER
+   — Navigates 1 card at a time, wraps infinitely.
+   — Uses getBoundingClientRect() for accurate width.
+   — Works on desktop (3-up) and mobile (1-up).
 ════════════════════════════════════════════════ */
 function initSlider() {
-  const track  = document.getElementById('reviewsTrack');
-  const cards  = track ? [...track.querySelectorAll('.review-card')] : [];
-  const prev   = document.getElementById('rPrev');
-  const next   = document.getElementById('rNext');
-  const dots   = document.querySelectorAll('.rdot');
-  let cur = 0, timer;
+  const track = document.getElementById('reviewsTrack');
+  if (!track) return;
 
-  if (!track || !cards.length) return;
+  const cards = [...track.querySelectorAll('.review-card')];
+  const prev  = document.getElementById('rPrev');
+  const next  = document.getElementById('rNext');
+  const dots  = document.querySelectorAll('.rdot');
+  const total = cards.length;
+  if (!total) return;
 
-  const perView = () => window.innerWidth <= 768 ? 1 : window.innerWidth <= 1024 ? 2 : 3;
-  const maxIdx  = () => Math.max(0, cards.length - perView());
+  let cur   = 0;
+  let timer = null;
 
-  const go = idx => {
-    cur = Math.max(0, Math.min(idx, maxIdx()));
-    const gap  = 20;
-    const w    = cards[0].offsetWidth + gap;
-    track.style.transform = `translateX(-${cur * w}px)`;
+  /* ── core: jump to a specific card index ── */
+  function go(idx) {
+    // Infinite wrap-around
+    cur = ((idx % total) + total) % total;
+
+    // Measure card width from the live DOM (reliable after paint)
+    const cardRect = cards[0].getBoundingClientRect();
+    const gap      = parseFloat(getComputedStyle(track).gap) || 20;
+    const shift    = cur * (cardRect.width + gap);
+
+    track.style.transform = `translateX(-${shift}px)`;
+
+    // Sync dots
     dots.forEach((d, i) => d.classList.toggle('active', i === cur));
-  };
+  }
 
-  const auto = () => { clearInterval(timer); timer = setInterval(() => go(cur >= maxIdx() ? 0 : cur + 1), 4500); };
+  /* ── autoplay ── */
+  function startAuto() {
+    stopAuto();
+    timer = setInterval(() => go(cur + 1), 4800);
+  }
+  function stopAuto() {
+    if (timer) { clearInterval(timer); timer = null; }
+  }
 
-  prev && prev.addEventListener('click', () => { go(cur - 1); auto(); });
-  next && next.addEventListener('click', () => { go(cur + 1); auto(); });
-  dots.forEach(d => d.addEventListener('click', () => { go(+d.dataset.i); auto(); }));
+  /* ── button controls ── */
+  if (prev) {
+    prev.addEventListener('click', () => {
+      go(cur - 1);
+      stopAuto();
+      startAuto();
+    });
+  }
+  if (next) {
+    next.addEventListener('click', () => {
+      go(cur + 1);
+      stopAuto();
+      startAuto();
+    });
+  }
 
-  track.addEventListener('mouseenter', () => clearInterval(timer));
-  track.addEventListener('mouseleave', auto);
+  /* ── dot controls ── */
+  dots.forEach(d => {
+    d.addEventListener('click', () => {
+      go(Number(d.dataset.i));
+      stopAuto();
+      startAuto();
+    });
+  });
 
-  // Touch swipe
-  let tx = 0;
-  track.addEventListener('touchstart', e => { tx = e.changedTouches[0].screenX; }, { passive: true });
-  track.addEventListener('touchend',   e => {
-    const diff = tx - e.changedTouches[0].screenX;
-    if (Math.abs(diff) > 40) { diff > 0 ? go(cur + 1) : go(cur - 1); }
+  /* ── pause on hover ── */
+  track.addEventListener('mouseenter', stopAuto);
+  track.addEventListener('mouseleave', startAuto);
+
+  /* ── touch / swipe support ── */
+  let touchStartX = 0;
+  track.addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].clientX;
   }, { passive: true });
 
-  let rt;
-  window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => go(cur), 200); });
+  track.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) {
+      diff > 0 ? go(cur + 1) : go(cur - 1);
+      stopAuto();
+      startAuto();
+    }
+  }, { passive: true });
 
-  go(0); auto();
+  /* ── recalculate on resize ── */
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => go(cur), 250);
+  });
+
+  /* ── init ── */
+  go(0);
+  startAuto();
 }
 
 /* ════════════════════════════════════════════════
