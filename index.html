@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Pure Fitness Gym | Best Gym in Kalyan – Yoga, Zumba, HIIT & More</title>
+  <meta name="description" content="Pure Fitness Gym in Kalyan, Maharashtra – Rated 4.9★ on Google. Premium equipment, expert trainers, Yoga, Zumba, HIIT & Strength Training." />
+  <meta name="keywords" content="gym in Kalyan, Pure Fitness Gym, Kalyan gym, yoga Kalyan, HIIT gym, personal trainer Kalyan" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Pure Fitness Gym | Best Gym in Kalyan" />
+  <meta property="og:description" content="Rated 4.9★ on Google. Premium equipment, expert trainers & diverse classes." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts: Bebas Neue for display, Plus Jakarta Sans for body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     PRELOADER
+═══════════════════════════════════════════ -->
+<div id="preloader" aria-hidden="true">
+  <div class="pre-content">
+    <div class="pre-wordmark">
+      <span class="pre-pure">PURE</span><span class="pre-fitness">FITNESS</span><span class="pre-gym">GYM</span>
+    </div>
+    <div class="pre-line"><div class="pre-fill" id="preFill"></div></div>
+    <p class="pre-sub">Forging Champions Since Day One</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════════ -->
+<header id="nav" role="banner">
+  <div class="nav-inner">
+    <a href="#hero" class="wordmark" aria-label="Pure Fitness Gym">
+      <span class="wm-pure">PURE</span> <span class="wm-fitness">FITNESS</span> <span class="wm-gym">GYM</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#services">Classes</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#location">Location</a>
+    </nav>
+
+    <a href="#membership" class="nav-pill" id="navJoinBtn">Join Now</a>
+
+    <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <a href="#about" class="drawer-link">About</a>
+    <a href="#services" class="drawer-link">Classes</a>
+    <a href="#testimonials" class="drawer-link">Reviews</a>
+    <a href="#location" class="drawer-link">Location</a>
+    <a href="#membership" class="nav-pill drawer-pill">Join Now</a>
+  </div>
+</header>
+
+<main>
+
+<!-- ═══════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════ -->
+<section id="hero" aria-label="Hero">
+  <div class="hero-media">
+    <img src="hero-bg.png" alt="Pure Fitness Gym — premium strength training floor" class="hero-img" />
+    <div class="hero-scrim"></div>
+    <!-- Diagonal red slash design element -->
+    <div class="hero-slash" aria-hidden="true"></div>
+  </div>
+
+  <div class="hero-body">
+    <div class="hero-kicker" id="hKicker">
+      <i data-lucide="map-pin" class="kicker-icon"></i>
+      Kalyan's Premier Gym &nbsp;·&nbsp; Rated
+      <span class="kicker-stars">★ 4.9</span>
+      on Google
+    </div>
+
+    <h1 class="hero-title" id="hTitle">
+      TRAIN<br/>
+      <em>HARDER.</em><br/>
+      <span class="title-outline">LIVE STRONGER.</span>
+    </h1>
+
+    <p class="hero-copy" id="hCopy">
+      Modern equipment. Certified coaches. Yoga, Zumba, HIIT &amp; Strength Training —
+      all in one powerful space in Kalyan.
+    </p>
+
+    <div class="hero-actions" id="hActions">
+      <a href="#membership" class="btn-red" id="heroJoinBtn">
+        Start Your Journey
+        <i data-lucide="arrow-right"></i>
+      </a>
+      <a href="#services" class="btn-ghost" id="heroExploreBtn">
+        <i data-lucide="dumbbell"></i>
+        Explore Classes
+      </a>
+    </div>
+
+    <div class="hero-stats" id="hStats">
+      <div class="hstat">
+        <span class="hstat-n" data-target="500">0</span><span class="hstat-plus">+</span>
+        <p>Active Members</p>
+      </div>
+      <div class="hstat-rule"></div>
+      <div class="hstat">
+        <span class="hstat-n" data-target="5">0</span>
+        <p>Expert Trainers</p>
+      </div>
+      <div class="hstat-rule"></div>
+      <div class="hstat">
+        <span class="hstat-n" data-target="6">0</span>
+        <p>Days a Week</p>
+      </div>
+    </div>
+  </div>
+
+  <a href="#ticker" class="scroll-hint" aria-label="Scroll down">
+    <i data-lucide="chevrons-down"></i>
+  </a>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     TICKER
+═══════════════════════════════════════════ -->
+<div id="ticker" class="ticker-wrap" aria-label="Class offerings">
+  <div class="ticker-track" id="tickerTrack">
+    <span>YOGA</span><span class="sep" aria-hidden="true">—</span>
+    <span>ZUMBA</span><span class="sep" aria-hidden="true">—</span>
+    <span>HIIT</span><span class="sep" aria-hidden="true">—</span>
+    <span>STRENGTH TRAINING</span><span class="sep" aria-hidden="true">—</span>
+    <span>PERSONAL TRAINING</span><span class="sep" aria-hidden="true">—</span>
+    <span>CARDIO</span><span class="sep" aria-hidden="true">—</span>
+    <span>YOGA</span><span class="sep" aria-hidden="true">—</span>
+    <span>ZUMBA</span><span class="sep" aria-hidden="true">—</span>
+    <span>HIIT</span><span class="sep" aria-hidden="true">—</span>
+    <span>STRENGTH TRAINING</span><span class="sep" aria-hidden="true">—</span>
+    <span>PERSONAL TRAINING</span><span class="sep" aria-hidden="true">—</span>
+    <span>CARDIO</span><span class="sep" aria-hidden="true">—</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     ABOUT
+═══════════════════════════════════════════ -->
+<section id="about" class="section" aria-label="About Pure Fitness Gym">
+  <div class="container">
+    <div class="about-layout">
+
+      <div class="about-visual" id="aboutVisual">
+        <div class="about-frame">
+          <img src="hero-bg.png" alt="Pure Fitness Gym training floor" loading="lazy" />
+          <div class="frame-border"></div>
+        </div>
+        <div class="about-badge">
+          <i data-lucide="star" class="badge-star"></i>
+          <div>
+            <strong>4.9 / 5</strong>
+            <span>Google Rating</span>
+          </div>
+        </div>
+        <!-- Vertical accent text -->
+        <p class="about-vert-text" aria-hidden="true">PURE FITNESS GYM</p>
+      </div>
+
+      <div class="about-text" id="aboutText">
+        <span class="eyebrow">Who We Are</span>
+        <h2>Kalyan's Most<br /><mark>Loved Gym.</mark></h2>
+        <p>
+          Welcome to <strong>Pure Fitness Gym</strong> — your ultimate fitness destination in Kalyan.
+          We combine premium equipment, certified personal trainers, and a buzzing community
+          to deliver results that last.
+        </p>
+        <p>
+          Whether you're stepping into a gym for the very first time or chasing a new personal best,
+          our clean, motivating space is built for you. Open 6 days a week with flexible membership
+          options for every budget.
+        </p>
+
+        <ul class="about-pills">
+          <li>
+            <i data-lucide="zap"></i>
+            <span>Top-tier modern equipment</span>
+          </li>
+          <li>
+            <i data-lucide="shield-check"></i>
+            <span>Certified expert trainers</span>
+          </li>
+          <li>
+            <i data-lucide="sparkles"></i>
+            <span>Hygienic &amp; welcoming environment</span>
+          </li>
+        </ul>
+
+        <a href="#membership" class="btn-red" id="aboutJoinBtn">
+          View Membership Plans
+          <i data-lucide="arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SERVICES
+═══════════════════════════════════════════ -->
+<section id="services" class="section section--dark" aria-label="Classes and Services">
+  <div class="container">
+    <div class="section-head" id="servicesHead">
+      <span class="eyebrow">What We Offer</span>
+      <h2>Classes &amp; <mark>Programs</mark></h2>
+      <p>Six powerful programs engineered to transform your body and mindset.</p>
+    </div>
+
+    <div class="services-grid" id="servicesGrid">
+
+      <article class="svc-card" id="svcYoga">
+        <div class="svc-num">01</div>
+        <div class="svc-icon"><i data-lucide="wind"></i></div>
+        <h3>Yoga</h3>
+        <p>Flexibility, balance, and mental clarity through guided sessions for every level.</p>
+        <span class="svc-tag">Mind &amp; Body</span>
+      </article>
+
+      <article class="svc-card" id="svcZumba">
+        <div class="svc-num">02</div>
+        <div class="svc-icon"><i data-lucide="music-2"></i></div>
+        <h3>Zumba</h3>
+        <p>Burn calories the fun way — high-energy dance cardio set to infectious beats.</p>
+        <span class="svc-tag">Cardio &amp; Dance</span>
+      </article>
+
+      <article class="svc-card svc-card--featured" id="svcHIIT">
+        <div class="svc-num">03</div>
+        <div class="svc-icon"><i data-lucide="flame"></i></div>
+        <h3>HIIT</h3>
+        <p>High-intensity intervals that torch fat and build endurance in record time.</p>
+        <span class="svc-tag svc-tag--hot">Most Popular</span>
+      </article>
+
+      <article class="svc-card" id="svcStrength">
+        <div class="svc-num">04</div>
+        <div class="svc-icon"><i data-lucide="dumbbell"></i></div>
+        <h3>Strength Training</h3>
+        <p>Sculpt and build power with our fully-equipped free-weights and resistance zone.</p>
+        <span class="svc-tag">Power &amp; Muscle</span>
+      </article>
+
+      <article class="svc-card" id="svcPersonal">
+        <div class="svc-num">05</div>
+        <div class="svc-icon"><i data-lucide="target"></i></div>
+        <h3>Personal Training</h3>
+        <p>One-on-one coaching with certified experts who build a plan around your goals.</p>
+        <span class="svc-tag">1-on-1</span>
+      </article>
+
+      <article class="svc-card" id="svcCardio">
+        <div class="svc-num">06</div>
+        <div class="svc-icon"><i data-lucide="activity"></i></div>
+        <h3>Cardio Zone</h3>
+        <p>Premium treadmills, ellipticals &amp; bikes for superior cardiovascular conditioning.</p>
+        <span class="svc-tag">Endurance</span>
+      </article>
+
+    </div>
+
+    <div class="services-cta">
+      <a href="#membership" class="btn-red" id="servicesJoinBtn">
+        Join Pure Fitness Gym Today
+        <i data-lucide="arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     PILLARS / WHY US
+═══════════════════════════════════════════ -->
+<section class="pillars" aria-label="Why choose Pure Fitness Gym">
+  <div class="container">
+    <div class="pillars-grid" id="pillarsGrid">
+      <div class="pillar">
+        <i data-lucide="clock-3"></i>
+        <h4>6 AM – 12 AM</h4>
+        <p>Mon – Sat. 18 hours of access built around your schedule.</p>
+      </div>
+      <div class="pillar">
+        <i data-lucide="credit-card"></i>
+        <h4>Flexible Plans</h4>
+        <p>Monthly, quarterly &amp; annual memberships at fair prices.</p>
+      </div>
+      <div class="pillar">
+        <i data-lucide="users"></i>
+        <h4>Real Community</h4>
+        <p>Supportive trainers and members who keep you accountable.</p>
+      </div>
+      <div class="pillar">
+        <i data-lucide="shield"></i>
+        <h4>Always Clean</h4>
+        <p>Well-maintained, hygienic facilities you'll actually enjoy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     TESTIMONIALS
+═══════════════════════════════════════════ -->
+<section id="testimonials" class="section section--dark" aria-label="Member Testimonials">
+  <div class="container">
+    <div class="section-head" id="testimonialsHead">
+      <span class="eyebrow">Real Reviews</span>
+      <h2>What Our <mark>Members Say</mark></h2>
+      <p>Genuine Google reviews from the Pure Fitness Gym community.</p>
+    </div>
+
+    <div class="reviews-wrap">
+      <div class="reviews-track" id="reviewsTrack" role="list">
+
+        <div class="review-card" role="listitem" id="revTaif">
+          <div class="review-top">
+            <div class="review-stars" aria-label="5 stars">
+              <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+            </div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/272px-Google_2015_logo.svg.png" alt="Google" class="g-logo" loading="lazy" />
+          </div>
+          <blockquote>"The equipment quality and well maintained facilities"</blockquote>
+          <div class="review-author">
+            <div class="review-avatar">TQ</div>
+            <div>
+              <strong>Taif Qureshi</strong>
+              <span>Verified Google Review</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card" role="listitem" id="revSuvarna">
+          <div class="review-top">
+            <div class="review-stars" aria-label="5 stars">
+              <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+            </div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/272px-Google_2015_logo.svg.png" alt="Google" class="g-logo" loading="lazy" />
+          </div>
+          <blockquote>"Trainers are helpful, supportive, motivating and friendly."</blockquote>
+          <div class="review-author">
+            <div class="review-avatar">SG</div>
+            <div>
+              <strong>Suvarna Gangurde</strong>
+              <span>Verified Google Review</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card" role="listitem" id="revArbaaz">
+          <div class="review-top">
+            <div class="review-stars" aria-label="5 stars">
+              <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+            </div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/272px-Google_2015_logo.svg.png" alt="Google" class="g-logo" loading="lazy" />
+          </div>
+          <blockquote>"The atmosphere and equipment are top-notch for workouts."</blockquote>
+          <div class="review-author">
+            <div class="review-avatar">AK</div>
+            <div>
+              <strong>Arbaaz Khan</strong>
+              <span>Verified Google Review</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="reviews-nav" aria-label="Testimonial navigation">
+        <button class="rnav-btn" id="rPrev" aria-label="Previous review"><i data-lucide="arrow-left"></i></button>
+        <div class="rnav-dots" id="rDots">
+          <button class="rdot active" data-i="0" aria-label="Review 1"></button>
+          <button class="rdot" data-i="1" aria-label="Review 2"></button>
+          <button class="rdot" data-i="2" aria-label="Review 3"></button>
+        </div>
+        <button class="rnav-btn" id="rNext" aria-label="Next review"><i data-lucide="arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- Rating bar -->
+    <div class="rating-bar" id="ratingBar">
+      <div class="rating-num">4.9</div>
+      <div class="rating-right">
+        <div class="rating-stars">
+          <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+        </div>
+        <p>Based on Google Reviews · Kalyan's Top-Rated Gym</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     MEMBERSHIP
+═══════════════════════════════════════════ -->
+<section id="membership" class="section" aria-label="Membership Plans">
+  <div class="container">
+    <div class="section-head" id="membershipHead">
+      <span class="eyebrow">Pricing</span>
+      <h2>Choose Your <mark>Plan</mark></h2>
+      <p>Straightforward plans, no hidden fees. Just results.</p>
+    </div>
+
+    <div class="plans-row" id="plansRow">
+
+      <div class="plan-card" id="planMonthly">
+        <div class="plan-top">
+          <h3>Monthly</h3>
+          <p>Great for getting started</p>
+        </div>
+        <div class="plan-price">
+          <i data-lucide="phone-call" class="plan-icon"></i>
+          <span>Contact for Price</span>
+        </div>
+        <ul class="plan-list">
+          <li><i data-lucide="check"></i> Full gym access</li>
+          <li><i data-lucide="check"></i> All group classes</li>
+          <li><i data-lucide="check"></i> Locker facilities</li>
+          <li><i data-lucide="check"></i> Trainer guidance</li>
+        </ul>
+        <a href="https://wa.me/919XXXXXXXXX?text=Hi%20Pure%20Fitness%20Gym!%20I%27m%20interested%20in%20Monthly%20membership." class="btn-outline-red" id="planMonthlyBtn" target="_blank" rel="noopener noreferrer">
+          <i data-lucide="message-circle"></i> Enquire via WhatsApp
+        </a>
+      </div>
+
+      <div class="plan-card plan-card--featured" id="planQuarterly">
+        <div class="plan-badge">Best Value</div>
+        <div class="plan-top">
+          <h3>Quarterly</h3>
+          <p>Most popular choice</p>
+        </div>
+        <div class="plan-price">
+          <i data-lucide="phone-call" class="plan-icon"></i>
+          <span>Contact for Price</span>
+        </div>
+        <ul class="plan-list">
+          <li><i data-lucide="check"></i> Full gym access</li>
+          <li><i data-lucide="check"></i> All group classes</li>
+          <li><i data-lucide="check"></i> Personal training sessions</li>
+          <li><i data-lucide="check"></i> Diet consultation</li>
+          <li><i data-lucide="check"></i> Progress tracking</li>
+        </ul>
+        <a href="https://wa.me/919XXXXXXXXX?text=Hi%20Pure%20Fitness%20Gym!%20I%27m%20interested%20in%20Quarterly%20membership." class="btn-red" id="planQuarterlyBtn" target="_blank" rel="noopener noreferrer">
+          <i data-lucide="message-circle"></i> Enquire via WhatsApp
+        </a>
+      </div>
+
+      <div class="plan-card" id="planAnnual">
+        <div class="plan-top">
+          <h3>Annual</h3>
+          <p>Maximum savings</p>
+        </div>
+        <div class="plan-price">
+          <i data-lucide="phone-call" class="plan-icon"></i>
+          <span>Contact for Price</span>
+        </div>
+        <ul class="plan-list">
+          <li><i data-lucide="check"></i> Full gym access</li>
+          <li><i data-lucide="check"></i> All group classes</li>
+          <li><i data-lucide="check"></i> Unlimited personal training</li>
+          <li><i data-lucide="check"></i> Nutrition plan</li>
+          <li><i data-lucide="check"></i> Priority booking</li>
+          <li><i data-lucide="check"></i> Best rates guaranteed</li>
+        </ul>
+        <a href="https://wa.me/919XXXXXXXXX?text=Hi%20Pure%20Fitness%20Gym!%20I%27m%20interested%20in%20Annual%20membership." class="btn-outline-red" id="planAnnualBtn" target="_blank" rel="noopener noreferrer">
+          <i data-lucide="message-circle"></i> Enquire via WhatsApp
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     LOCATION
+═══════════════════════════════════════════ -->
+<section id="location" class="section section--dark" aria-label="Location and Hours">
+  <div class="container">
+    <div class="section-head" id="locationHead">
+      <span class="eyebrow">Find Us</span>
+      <h2>Visit <mark>Pure Fitness Gym</mark></h2>
+    </div>
+
+    <div class="location-layout">
+
+      <div class="map-box" id="mapBox">
+        <iframe
+          title="Pure Fitness Gym on Google Maps"
+          src="https://maps.google.com/maps?q=Bharwani+Raheja+Complex+Rd,+near+BAILBAZAR,+Bhoiwada,+Kalyan,+Maharashtra+421301&output=embed"
+          width="100%" height="100%"
+          style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <div class="location-cards" id="locationCards">
+
+        <div class="loc-card">
+          <div class="loc-icon"><i data-lucide="map-pin"></i></div>
+          <div>
+            <h4>Address</h4>
+            <p>Bharwani Raheja Complex Rd,<br />Near Bailbazar, Bhoiwada,<br />Kalyan, Maharashtra 421301</p>
+            <a href="https://maps.google.com/?q=Pure+Fitness+Gym+Kalyan" class="loc-link" target="_blank" rel="noopener noreferrer" id="directionsBtn">
+              Get Directions <i data-lucide="external-link"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="loc-card">
+          <div class="loc-icon"><i data-lucide="clock"></i></div>
+          <div>
+            <h4>Operating Hours</h4>
+            <table class="hours-table">
+              <tbody>
+                <tr>
+                  <td>Monday – Saturday</td>
+                  <td class="hour-val">6:00 AM – 12:00 AM</td>
+                </tr>
+                <tr>
+                  <td>Sunday</td>
+                  <td class="hour-val closed">Closed</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="loc-card">
+          <div class="loc-icon"><i data-lucide="message-circle"></i></div>
+          <div>
+            <h4>Chat With Us</h4>
+            <p>Get instant answers about memberships, timings &amp; classes — directly on WhatsApp.</p>
+            <a href="https://wa.me/919XXXXXXXXX?text=Hi%20Pure%20Fitness%20Gym!" class="btn-wa" id="locWaBtn" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#hero" class="wordmark footer-wm">
+          <span class="wm-pure">PURE</span> <span class="wm-fitness">FITNESS</span> <span class="wm-gym">GYM</span>
+        </a>
+        <p>Kalyan's premier fitness destination. Start your journey to a stronger, healthier you today.</p>
+        <div class="footer-rating">
+          <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+          <span>4.9 Rating · Google</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <a href="#about">About Us</a>
+        <a href="#services">Classes</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#membership">Membership</a>
+        <a href="#location">Location</a>
+      </div>
+
+      <div class="footer-col">
+        <h5>Programs</h5>
+        <a href="#services">Yoga</a>
+        <a href="#services">Zumba</a>
+        <a href="#services">HIIT</a>
+        <a href="#services">Strength Training</a>
+        <a href="#services">Personal Training</a>
+      </div>
+
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <p>
+          <i data-lucide="map-pin"></i>
+          Bharwani Raheja Complex Rd,<br />Bhoiwada, Kalyan 421301
+        </p>
+        <p>
+          <i data-lucide="clock"></i>
+          Mon–Sat: 6 AM – 12 AM
+        </p>
+        <a href="https://wa.me/919XXXXXXXXX?text=Hi%20Pure%20Fitness%20Gym!" class="btn-wa footer-wa" target="_blank" rel="noopener noreferrer" id="footerWaBtn">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          WhatsApp Us
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Pure Fitness Gym, Kalyan. All rights reserved.</p>
+      <p>Designed for champions.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════
+     FLOATING WHATSAPP
+═══════════════════════════════════════════ -->
+<a href="https://wa.me/919XXXXXXXXX?text=Hi%20Pure%20Fitness%20Gym!%20I%27d%20like%20to%20know%20about%20memberships."
+   class="wa-float"
+   id="waFloat"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Chat with Pure Fitness Gym on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  <span class="wa-tip">Chat with us!</span>
+</a>
+
+<script src="main.js"></script>
+</body>
+</html>
